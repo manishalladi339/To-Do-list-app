@@ -1,0 +1,45 @@
+1. Clone the repository
+First, clone this repository to your local machine:
+
+git clone https://github.com/your-username/cloud-todo-app.git
+cd cloud-todo-app
+
+2. Install dependencies
+Navigate to the backend/ directory and install the necessary dependencies for the backend:
+
+cd backend
+npm install
+
+3. Deploy the Backend
+To deploy the backend to AWS, use the Serverless Framework:
+
+Deploy the backend:
+
+serverless deploy
+
+This will:
+Deploy the Lambda functions.
+Create an API Gateway to expose the Lambda functions as HTTP endpoints.
+Set up a DynamoDB table to store the to-do items.
+
+Retrieve the API Gateway URL: Once the deployment is complete, Serverless will provide you with the API endpoint URL. 
+Copy the API Gateway URL from the output.
+
+4. Configure the Frontend
+Open the frontend/app.js file and update the API_BASE_URL with the API Gateway URL you copied in the previous step:
+
+const API_BASE_URL = 'https://your-api-gateway-id.execute-api.us-east-1.amazonaws.com/dev/todos';
+
+5. Host the Frontend
+You can host the frontend on AWS S3 or any static hosting provider. Here’s how you can host the frontend on AWS S3:
+
+Create an S3 Bucket:
+Go to the AWS S3 Console and create a new S3 bucket. Make sure the bucket name is globally unique.
+Upload Files:
+Upload the contents of the frontend/ directory (i.e., index.html, app.js, style.css) to your newly created S3 bucket.
+Enable Static Website Hosting:
+In the S3 bucket settings, enable Static Website Hosting and note the Bucket Website Endpoint URL.
+Access the App:
+Once the frontend is hosted, navigate to the Bucket Website Endpoint URL to access your to-do app.
+
+

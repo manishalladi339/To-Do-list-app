@@ -1,0 +1,19 @@
+{
+    "name": "cloud-todo-app-backend",
+    "version": "1.0.0",
+    "description": "Serverless Todo App Backend",
+    "main": "index.js",
+    "dependencies": {
+      "aws-sdk": "^2.1043.0"
+    },
+    "devDependencies": {
+      "serverless": "^3.0.0"
+    },
+    "scripts": {
+      "deploy": "serverless deploy",
+      "remove": "serverless remove"
+    },
+    "author": "Your Name",
+    "license": "MIT"
+  }
+  
